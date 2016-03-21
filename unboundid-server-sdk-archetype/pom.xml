@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>unboundid-server-sdk-maven-parent</artifactId>
+    <groupId>com.unboundid.sdk</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>unboundid-server-sdk-archetype</artifactId>
+  <name>UnboundID Server SDK Maven Archetype</name>
+  <description>A Maven archetype that can generate a project for building an
+    UnboundID Server SDK extension bundle.</description>
+  <url>https://www.unboundid.com</url>
+  <version>1.0-SNAPSHOT</version>
+
+  <inceptionYear>2016</inceptionYear>
+
+  <developers>
+    <developer>
+      <name>Jacob Childress</name>
+    </developer>
+  </developers>
+
+</project>

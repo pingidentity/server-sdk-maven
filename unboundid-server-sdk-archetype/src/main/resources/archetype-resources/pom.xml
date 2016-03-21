@@ -25,6 +25,12 @@
     -->
 
     <!--
+    The Java compiler source and target versions for this project.
+    -->
+    <source.version>1.7</source.version>
+    <target.version>1.7</target.version>
+
+    <!--
     The Server SDK version for which this extension will be built.
     -->
     <server-sdk.version>5.2.0.0</server-sdk.version>
@@ -96,6 +102,15 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>${source.version}</source>
+          <target>${target.version}</target>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>

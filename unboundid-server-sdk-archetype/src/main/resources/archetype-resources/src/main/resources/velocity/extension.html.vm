@@ -10,77 +10,76 @@
 
 <body>
 <div id="wrapper">
-    <div id="headercontainer">
+    <header>
         <a href="http://www.unboundid.com/" title="Generated Documentation for $extension.getExtensionName()" id="logo">
-            <img src="images/+___.gif" width="274" height="99" alt="UnboundID" style="float: left;">
+            <img src="images/+___.gif" width="274" height="99" alt="UnboundID"/>
         </a>
-        <div id="headertitle">
+        <div id="title">
             <h1>Generated Documentation for $extension.getExtensionName()</h1>
         </div>
-    </div>
+    </header>
 
-    <div id="content">
-        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-            <tr valign="top">
-                <td style="padding: 10px 30px 20px 40px;">
+    <section id="content">
 
-                  $VelocityUtils.getExtensionDescriptionHTML($extension)
+        <section>
+          $VelocityUtils.getExtensionDescriptionHTML($extension)
+        </section>
 
-                  #set($extensionArguments = $VelocityUtils.getExtensionArguments($extension))
-                  #if(!$extensionArguments.isEmpty())
-                      <h2>Allowed Arguments</h2>
-                    #foreach($argument in $extensionArguments)
-                        <table border="0" width="100%">
-                            <tr width="100%">
-                                <td width="20%"><b>Argument Name:</b></td>
-                                <td width="80%">$argument.getLongIdentifier()</td>
-                            </tr>
-                            <tr width="100%">
-                                <td width="20%"><b>Description:</b></td>
-                                <td width="80%">$argument.getDescription()</td>
-                            </tr>
-                            <tr width="100%">
-                                <td width="20%"><b>Data Type:</b></td>
-                                <td width="80%">$argument.getDataTypeName()</td>
-                            </tr>
-                            <tr width="100%">
-                                <td width="20%"><b>Is Required:</b></td>
-                                <td width="80%">$argument.isRequired()</td>
-                            </tr>
-                          #set($maxOccurrences = "#if ($argument.getMaxOccurrences() > 0) $argument.getMaxOccurrences() #{else} unlimited #end")
-                            <tr width="100%">
-                                <td width="20%"><b>Maximum Occurrences:</b></td>
-                                <td width="80%">$maxOccurrences</td>
-                            </tr>
-                        </table>
-                    #end
-                  #end
+      #set($extensionArguments = $VelocityUtils.getExtensionArguments($extension))
+      #if(!$extensionArguments.isEmpty())
+        <section>
+          <h2>Allowed Arguments</h2>
+          #foreach($argument in $extensionArguments)
+              <table border="0" width="100%">
+                  <tr width="100%">
+                      <td width="20%"><b>Argument Name:</b></td>
+                      <td width="80%">$argument.getLongIdentifier()</td>
+                  </tr>
+                  <tr width="100%">
+                      <td width="20%"><b>Description:</b></td>
+                      <td width="80%">$argument.getDescription()</td>
+                  </tr>
+                  <tr width="100%">
+                      <td width="20%"><b>Data Type:</b></td>
+                      <td width="80%">$argument.getDataTypeName()</td>
+                  </tr>
+                  <tr width="100%">
+                      <td width="20%"><b>Is Required:</b></td>
+                      <td width="80%">$argument.isRequired()</td>
+                  </tr>
+                #set($maxOccurrences = "#if ($argument.getMaxOccurrences() > 0) $argument.getMaxOccurrences() #{else} unlimited #end")
+                  <tr width="100%">
+                      <td width="20%"><b>Maximum Occurrences:</b></td>
+                      <td width="80%">$maxOccurrences</td>
+                  </tr>
+              </table>
+          #end
+        </section>
+      #end
 
-                    <br/>
+      #set($exampleUsages = $VelocityUtils.getExampleUsages($extension))
+      #if(!$exampleUsages.isEmpty())
+          <section>
+            <h2>Example Configurations</h2>
+            #foreach($example in $exampleUsages.entrySet())
+                <p>$example.getValue()</p>
+              #set($exampleArguments = $example.getKey())
+              #if($exampleArguments.isEmpty())
+                  <li><i>{no-arguments}</i></li>
+              #else
+                #foreach($exampleArgument in $exampleArguments)
+                    <li>$exampleArgument</li>
+                #end
+              #end
+            #end
+          </section>
+      #end
 
-                  #set($exampleUsages = $VelocityUtils.getExampleUsages($extension))
-                  #if(!$exampleUsages.isEmpty())
-                      <h2>Example Configurations</h2>
-                    #foreach($example in $exampleUsages.entrySet())
-                        <p>$example.getValue()</p>
-                      #set($exampleArguments = $example.getKey())
-                      #if($exampleArguments.isEmpty())
-                          <li><i>{no-arguments}</i></li>
-                      #else
-                        #foreach($exampleArgument in $exampleArguments)
-                            <li>$exampleArgument</li>
-                        #end
-                      #end
-                    #end
-                  #end
-                </td>
-            </tr>
-        </table>
-    </div>
+    </section>
 
-    <div id="footer">
+    <footer>
         Copyright &copy; 2016 &ndash; UnboundID Corp. &ndash; All rights reserved.
-    </div>
+    </footer>
 </div>
 </body>
 </html>

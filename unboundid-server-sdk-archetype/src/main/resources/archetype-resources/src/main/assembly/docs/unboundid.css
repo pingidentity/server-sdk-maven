@@ -161,7 +161,12 @@ pre {
     background: #FFF url(images/content_bg.gif) repeat-y top left;
 }
 
-#footer {
+#content section {
+    padding: 20px;
+    font: normal 9pt Helvetica, Arial, sans-serif;
+}
+
+footer {
     margin: 10px 20px 0 0;
     color: #9db2ce;
     font: normal 8pt Arial;
@@ -169,13 +174,13 @@ pre {
     text-align:right;
 }
 
-#footer a:link, #footer a:visited {
+footer a:link, footer a:visited {
     color: #9db2ce;
     font: normal 8pt Arial;
     text-decoration: none;
 }
 
-#footer a:hover {
+footer a:hover {
     color:#f57b20;
     text-decoration: underline;
 }
@@ -221,20 +226,33 @@ pre {
 
 /* ======= LIST ITEMS ======= */
 
-#headercontainer{
+header {
     width: 924px;
     height: 99px;
     margin: 0;
     padding: 0;
 }
 
-#headertitle {
+header a img {
+    float: left;
+}
+
+header #title {
     background: url('images/nav_bg.gif') no-repeat top right;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 auto;
     float:right;
     width:650px;
     height:99px;
+    line-height:99px;
     text-align: center
+}
+
+header #title h1 {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
 }
 

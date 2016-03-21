@@ -152,6 +152,7 @@
         <artifactId>unboundid-server-sdk-docs-maven-plugin</artifactId>
         <version>1.0-SNAPSHOT</version>
         <configuration>
+          <!-- The following configuration may be customized, if needed. -->
           <velocityResourceLoaderPath>${project.basedir}/src/main/resources/velocity</velocityResourceLoaderPath>
           <indexTemplate>index.html.vm</indexTemplate>
           <extensionTemplate>extension.html.vm</extensionTemplate>

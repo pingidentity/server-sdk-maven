@@ -59,20 +59,22 @@
 
       #set($exampleUsages = $VelocityUtils.getExampleUsages($extension))
       #if(!$exampleUsages.isEmpty())
-          <section>
-            <h2>Example Configurations</h2>
-            #foreach($example in $exampleUsages.entrySet())
-                <p>$example.getValue()</p>
-              #set($exampleArguments = $example.getKey())
-              #if($exampleArguments.isEmpty())
-                  <li><i>{no-arguments}</i></li>
-              #else
-                #foreach($exampleArgument in $exampleArguments)
-                    <li>$exampleArgument</li>
-                #end
+        <section>
+          <h2>Example Configurations</h2>
+          #foreach($example in $exampleUsages.entrySet())
+            <p>$example.getValue()</p>
+            <ul>
+            #set($exampleArguments = $example.getKey())
+            #if($exampleArguments.isEmpty())
+              <li><i>{no-arguments}</i></li>
+            #else
+              #foreach($exampleArgument in $exampleArguments)
+              <li>$exampleArgument</li>
               #end
             #end
-          </section>
+            </ul>
+          #end
+        </section>
       #end
 
     </section>

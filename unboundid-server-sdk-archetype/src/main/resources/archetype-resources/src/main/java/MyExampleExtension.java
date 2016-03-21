@@ -1,5 +1,12 @@
 package ${package};
 
+import java.util.Collections;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.unboundid.directory.sdk.ds.api.IdentityMapper;
 import com.unboundid.directory.sdk.ds.config.IdentityMapperConfig;
 import com.unboundid.directory.sdk.ds.types.DirectoryServerContext;
@@ -34,6 +41,21 @@ public class MyExampleExtension extends IdentityMapper
   }
 
 
+  @Override
+  public Map<List<String>, String> getExamplesArgumentSets()
+  {
+    List<String> exampleArguments1 = Arrays.asList("emailDomain", "mydomain.com");
+    List<String> exampleArguments2 = Collections.emptyList();
+    Map<List<String>, String> exampleArgumentSets = new HashMap<>();
+    exampleArgumentSets.put(exampleArguments1,
+                            "Sets 'mydomain.com' as the domain to be used " +
+                                "when contructing email addresses.");
+    exampleArgumentSets.put(exampleArguments2,
+                            "Uses the default email domain of 'example.com'.");
+    return exampleArgumentSets;
+  }
+
+
   @Override()
   public void defineConfigArguments(final ArgumentParser parser)
       throws ArgumentException
@@ -41,7 +63,8 @@ public class MyExampleExtension extends IdentityMapper
     parser.addArgument(new StringArgument(
         null, "emailDomain",
         true, 1, "emailDomain",
-        "The domain name to be used when constructing an email address."));
+        "The domain name to be used when constructing an email address.",
+        "example.com"));
   }
 
 

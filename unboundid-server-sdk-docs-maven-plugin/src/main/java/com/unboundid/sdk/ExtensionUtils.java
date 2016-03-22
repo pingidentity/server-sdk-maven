@@ -81,11 +81,11 @@ public final class ExtensionUtils
       return;
     }
 
-    for (final File f : listFiles(srcDirectory))
+    for (final File file : listFiles(srcDirectory))
     {
-      if (f.isFile())
+      if (file.isFile())
       {
-        final String name = f.getName();
+        final String name = file.getName();
         if (! name.endsWith(".java"))
         {
           continue;
@@ -118,19 +118,19 @@ public final class ExtensionUtils
           }
         }
       }
-      else if (f.isDirectory())
+      else if (file.isDirectory())
       {
         final String newPkg;
         if (pkg == null)
         {
-          newPkg = f.getName();
+          newPkg = file.getName();
         }
         else
         {
-          newPkg = pkg + '.' + f.getName();
+          newPkg = pkg + '.' + file.getName();
         }
 
-        findExtensionClasses(f, newPkg, extensionList);
+        findExtensionClasses(file, newPkg, extensionList);
       }
     }
   }

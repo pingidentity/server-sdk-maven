@@ -21,9 +21,14 @@
 
     <section id="content">
 
+      #set($description = $extension.getExtensionDescription())
+      #if($description && !$description.isEmpty())
         <section>
-          $VelocityUtils.getExtensionDescriptionHTML($extension)
+            #foreach($paragraph in $description)
+            <p>$paragraph</p>
+            #end
         </section>
+      #end
 
       #set($extensionArguments = $VelocityUtils.getExtensionArguments($extension))
       #if(!$extensionArguments.isEmpty())

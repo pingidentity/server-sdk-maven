@@ -43,33 +43,11 @@ public final class VelocityUtils
 
 
   /**
-   * Generates an extension's description as HTML.
-   *
-   * @param extension
-   *          The extension for which to generate documentation.
-   * @return The extension's description as HTML.
-   */
-  public static String getExtensionDescriptionHTML(final UnboundIDExtension extension)
-  {
-    StringBuilder sb = new StringBuilder();
-    final String[] paragraphs = extension.getExtensionDescription();
-    if (paragraphs != null)
-    {
-      for (final String paragraph : paragraphs)
-      {
-        sb.append("<p>").append(paragraph).append("</p>");
-      }
-    }
-    return sb.toString();
-  }
-
-
-  /**
    * Gets an extension's arguments.
    *
    * @param extension
    *          The extension for which to generate documentation.
-   * @return The extension's arguments.
+   * @return The extension's arguments. Never returns {@code null}.
    */
   public static List<Argument> getExtensionArguments(final UnboundIDExtension extension)
   {
@@ -126,7 +104,7 @@ public final class VelocityUtils
    *          The extension for which to generate documentation.
    * @return The extension's example usages, if any, as a map where the key is
    *         a list of example arguments, and the value is a description of the
-   *         example usage.
+   *         example usage. Never returns {@code null}.
    */
   public static Map<List<String>, String> getExampleUsages(
       final UnboundIDExtension extension)
@@ -136,7 +114,10 @@ public final class VelocityUtils
     {
       final ExampleUsageProvider exampleUsageProvider =
           (ExampleUsageProvider) extension;
-      exampleUsages =  exampleUsageProvider.getExamplesArgumentSets();
+      if (exampleUsageProvider.getExamplesArgumentSets() != null)
+      {
+        exampleUsages = exampleUsageProvider.getExamplesArgumentSets();
+      }
     }
     return exampleUsages;
   }

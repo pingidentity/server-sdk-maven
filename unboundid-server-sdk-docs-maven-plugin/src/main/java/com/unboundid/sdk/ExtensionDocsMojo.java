@@ -135,8 +135,7 @@ public class ExtensionDocsMojo extends AbstractMojo
   {
     if (!directory.exists())
     {
-      boolean created = directory.mkdirs();
-      if (!created)
+      if (!directory.mkdirs())
       {
         throw new MojoExecutionException(
             String.format("Failed to create directory '%s'", directory));

@@ -52,6 +52,7 @@
                       <td width="20%"><b>Is Required:</b></td>
                       <td width="80%">$argument.isRequired()</td>
                   </tr>
+                ## FIXME: "$argument.getMaxOccurrences() > 0" does not evaluate correctly
                 #set($maxOccurrences = "#if ($argument.getMaxOccurrences() > 0) $argument.getMaxOccurrences() #{else} unlimited #end")
                   <tr width="100%">
                       <td width="20%"><b>Maximum Occurrences:</b></td>

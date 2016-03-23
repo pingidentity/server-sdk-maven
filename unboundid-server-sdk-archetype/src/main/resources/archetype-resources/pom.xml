@@ -45,7 +45,7 @@
     <server-sdk.maven-version>${server-sdk.version}</server-sdk.maven-version>
 
     <!--
-    The name for this extension or set of extensions.  It must begin with an
+    The name for this extension or set of extensions. It must begin with an
     ASCII alphabetic character and must contain only ASCII alphabetic
     characters, numeric digits, the period, and the dash.
 
@@ -107,6 +107,8 @@
     Used to set the Build-Time value in the jar manifest.
     -->
     <maven.build.timestamp.format>yyyyMMddHHmmss'Z'</maven.build.timestamp.format>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <build>
@@ -119,6 +121,59 @@
           <source>${source.version}</source>
           <target>${target.version}</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>1.4.1</version>
+        <executions>
+          <execution>
+            <id>enforce-property</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireProperty>
+                  <property>extension.name</property>
+                  <message>You must set an extension.name property.</message>
+                  <regex>[a-zA-Z]([a-zA-Z0-9\.\-])*</regex>
+                  <regexMessage>The extension.name property must begin with an ASCII alphabetic character and must contain only ASCII alphabetic characters, numeric digits, the period, and the dash.</regexMessage>
+                </requireProperty>
+                <requireProperty>
+                  <property>extension.version</property>
+                  <message>You must set an extension.version property.</message>
+                  <regex>[a-zA-Z0-9]([a-zA-Z0-9\.\-])*</regex>
+                  <regexMessage>The extension.version property must begin with an ASCII alphabetic character or numeric digit and must contain only ASCII alphabetic characters, numeric digits, the period, and the dash.</regexMessage>
+                </requireProperty>
+                <requireProperty>
+                  <property>extension.vendor.name</property>
+                  <message>You must set an extension.vendor.name property.</message>
+                </requireProperty>
+                <requireProperty>
+                  <property>extension.vendor.id</property>
+                  <message>You must set an extension.vendor.id property.</message>
+                  <regex>([a-zA-Z_$][a-zA-Z\d_$]*\.)*[a-zA-Z_$][a-zA-Z\d_$]*</regex>
+                  <regexMessage>The extension.vendor.id property must must be provided and should use a notation similar to that of Java packages.</regexMessage>
+                </requireProperty>
+                <requireProperty>
+                  <property>extension.vendor.url</property>
+                  <message>You must set an extension.vendor.url property.</message>
+                </requireProperty>
+                <requireProperty>
+                  <property>extension.vendor.contact</property>
+                  <message>You must set an extension.vendor.contact property.</message>
+                </requireProperty>
+                <requireProperty>
+                  <property>include.source</property>
+                  <message>You must set an include.source property.</message>
+                  <regex>(true|false)</regex>
+                  <regexMessage>The include.source property must have a value of either 'true' or 'false'.</regexMessage>
+                </requireProperty>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

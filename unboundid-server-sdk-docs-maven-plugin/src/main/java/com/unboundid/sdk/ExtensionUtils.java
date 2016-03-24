@@ -64,6 +64,7 @@ public final class ExtensionUtils
    *           The directory to examine for extension source files.
    * @param  pkg
    *           The Java package associated with the provided directory.
+   *           May be {@code null}.
    * @param  extensionList
    *           The list to which any extensions should be added.
    */
@@ -71,12 +72,12 @@ public final class ExtensionUtils
                                            final String pkg,
                                            final List<UnboundIDExtension> extensionList)
   {
-    if (! srcDirectory.exists())
+    if (!srcDirectory.exists())
     {
       return;
     }
 
-    if (! srcDirectory.isDirectory())
+    if (!srcDirectory.isDirectory())
     {
       return;
     }
@@ -86,13 +87,14 @@ public final class ExtensionUtils
       if (file.isFile())
       {
         final String name = file.getName();
-        if (! name.endsWith(".java"))
+        if (!name.endsWith(".java"))
         {
           continue;
         }
 
         final Class<?> c;
-        final String className = pkg + '.' +
+        final String prefixedPkg = pkg != null ? pkg + "." : "";
+        final String className = prefixedPkg +
             name.substring(0, (name.length() - 5));
         try
         {

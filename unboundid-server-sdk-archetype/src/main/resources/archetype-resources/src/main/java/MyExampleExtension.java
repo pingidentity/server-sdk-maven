@@ -34,8 +34,7 @@ public class MyExampleExtension extends IdentityMapper
   {
     return new String[] {
         "This is an example identity mapper extension that converts a " +
-            "username to an email address.",
-        "This is a second paragraph."
+            "username to an email address."
     };
   }
 

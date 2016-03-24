@@ -72,25 +72,22 @@ public final class VelocityUtils
             StaticUtils.getExceptionMessage(e)), e);
       }
 
-      if (!allArguments.isEmpty())
+      for (final Argument argument : allArguments)
       {
-        for (final Argument argument : allArguments)
+        if (argument.isHidden())
         {
-          if (argument.isHidden())
-          {
-            continue;
-          }
-
-          final String argName = argument.getLongIdentifier();
-          if ((argName == null) || (argName.length() == 0))
-          {
-            throw new VelocityException(String.format(
-                "Extension '%s' includes argument '%s' without a long identifier.",
-                extension.getClass().getName(), argument));
-          }
-
-          arguments.add(argument);
+          continue;
         }
+
+        final String argName = argument.getLongIdentifier();
+        if ((argName == null) || (argName.length() == 0))
+        {
+          throw new VelocityException(String.format(
+              "Extension '%s' includes argument '%s' without a long identifier.",
+              extension.getClass().getName(), argument));
+        }
+
+        arguments.add(argument);
       }
     }
     return arguments;

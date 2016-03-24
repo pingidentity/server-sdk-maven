@@ -110,7 +110,8 @@ public class ExtensionDocsMojo extends AbstractMojo
 
     VelocityEngine velocityEngine = new VelocityEngine();
     Properties resourceLoaderPath = new Properties();
-    resourceLoaderPath.setProperty("file.resource.loader.path", velocityResourceLoaderPath);
+    resourceLoaderPath.setProperty("file.resource.loader.path",
+                                   velocityResourceLoaderPath);
     velocityEngine.init(resourceLoaderPath);
 
     getLog().info("Processing index template");
@@ -126,11 +127,22 @@ public class ExtensionDocsMojo extends AbstractMojo
       Context extensionContext = new VelocityContext();
       extensionContext.put("extension", extension);
       extensionContext.put("VelocityUtils", VelocityUtils.class);
-      processTemplate(velocityEngine, extensionTemplate, VelocityUtils.getExtensionFilename(extension), extensionContext);
+      processTemplate(velocityEngine, extensionTemplate,
+                      VelocityUtils.getExtensionFilename(extension),
+                      extensionContext);
     }
   }
 
 
+  /**
+   * Checks that the provided directory exists, and if it doesn't, creates it,
+   * including any parent directories, if necessary.
+   *
+   * @param directory
+   *          The directory to check.
+   * @throws MojoExecutionException if the directory does not exist and cannot
+   *           be created.
+   */
   private void checkDirectory(File directory) throws MojoExecutionException
   {
     if (!directory.exists())
@@ -144,8 +156,24 @@ public class ExtensionDocsMojo extends AbstractMojo
   }
 
 
+  /**
+   * Builds a Velocity template.
+   *
+   * @param velocityEngine
+   *          A Velocity Engine instance.
+   * @param template
+   *          The name of the Velocity template to build, relative to the
+   *          resource loader path.
+   * @param outputName
+   *          The name of the output file, relative to the output directory
+   *          that was specified as a parameter to this Mojo.
+   * @param context
+   *           The Velocity context that will be available to the template.
+   * @throws MojoExecutionException if the output file cannot be created.
+   */
   private void processTemplate(VelocityEngine velocityEngine, String template,
-                               String outputName, Context context) throws MojoExecutionException
+                               String outputName, Context context)
+      throws MojoExecutionException
   {
     File outputPath = new File(outputDirectory, outputName);
 

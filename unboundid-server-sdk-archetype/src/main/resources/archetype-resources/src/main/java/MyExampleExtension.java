@@ -55,7 +55,7 @@ public class MyExampleExtension extends IdentityMapper
   }
 
 
-  @Override()
+  @Override
   public void defineConfigArguments(final ArgumentParser parser)
       throws ArgumentException
   {
@@ -67,7 +67,7 @@ public class MyExampleExtension extends IdentityMapper
   }
 
 
-  @Override()
+  @Override
   public void initializeIdentityMapper(
       final DirectoryServerContext serverContext,
       final IdentityMapperConfig config,

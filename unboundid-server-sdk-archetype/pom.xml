@@ -14,7 +14,6 @@
   <description>A Maven archetype that can generate a project for building an
     UnboundID Server SDK extension bundle.</description>
   <url>https://www.unboundid.com</url>
-  <version>1.0-SNAPSHOT</version>
 
   <inceptionYear>2016</inceptionYear>
 

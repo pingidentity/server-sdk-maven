@@ -19,7 +19,7 @@
   <properties>
     <!--
     The following properties will be used during the course of building one or
-    more extensions for UnboundID server products. If  multiple extensions will
+    more extensions for UnboundID server products. If multiple extensions will
     be packaged into the same jar file, then these property values should refer
     to the collection rather than individual extensions.
     -->
@@ -257,6 +257,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.6</version>
         <executions>
           <execution>
             <id>create-zip-archive</id>

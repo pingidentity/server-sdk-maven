@@ -48,6 +48,8 @@ public final class VelocityUtils
    * @param extension
    *          The extension for which to generate documentation.
    * @return The extension's arguments. Never returns {@code null}.
+   * @throws VelocityException if an error occurs while handling the extension's
+   *         arguments.
    */
   public static List<Argument> getExtensionArguments(final UnboundIDExtension extension)
   {

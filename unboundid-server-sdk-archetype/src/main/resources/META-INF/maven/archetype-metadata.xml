@@ -23,4 +23,9 @@
       </includes>
     </fileSet>
   </fileSets>
+  <requiredProperties>
+    <requiredProperty key="archetype-version">
+      <defaultValue>${project.version}</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
 </archetype-descriptor>

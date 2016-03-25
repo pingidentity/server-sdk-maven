@@ -224,6 +224,10 @@
               <UnboundID-Server-SDK-Version>${server-sdk.version}</UnboundID-Server-SDK-Version>
             </manifestEntries>
           </archive>
+          <excludes>
+            <exclude>velocity/</exclude>
+            <exclude>velocity/*</exclude>
+          </excludes>
         </configuration>
       </plugin>
       <plugin>
@@ -282,6 +286,7 @@
       <groupId>com.unboundid.product.ds</groupId>
       <artifactId>server-sdk</artifactId>
       <version>${server-sdk.maven-version}</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 

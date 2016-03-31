@@ -5,4 +5,4 @@ Server SDK extension bundles.
 
 ## License
 
-???
+This is licensed under the Apache License 2.0.

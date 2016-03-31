@@ -39,4 +39,4 @@ The extension bundle will be created as a zip in the `target` directory.
 
 ## License
 
-???
+This is licensed under the Apache License 2.0.

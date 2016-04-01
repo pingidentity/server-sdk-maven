@@ -27,7 +27,7 @@ Use the archetype to generate a Maven project, providing your own values for
 mvn archetype:generate -DarchetypeGroupId=com.unboundid.sdk \
   -DarchetypeArtifactId=unboundid-server-sdk-archetype \
   -DarchetypeVersion=1.0-SNAPSHOT \
-  -DgroupId=com.example -DartifactId=myNewProject \
+  -DgroupId=com.example -DartifactId=my-extension \
   -DinteractiveMode=false
 ```
 

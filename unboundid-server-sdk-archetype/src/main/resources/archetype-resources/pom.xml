@@ -233,7 +233,7 @@
       <plugin>
         <groupId>com.unboundid.sdk</groupId>
         <artifactId>unboundid-server-sdk-docs-maven-plugin</artifactId>
-        <version>${archetype-version}</version>
+        <version>1.0.1</version>
         <configuration>
           <!-- The following configuration may be customized, if needed. -->
           <velocityResourceLoaderPath>${project.basedir}/src/main/resources/velocity</velocityResourceLoaderPath>

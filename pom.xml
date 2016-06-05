@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
   <name>UnboundID Server SDK Maven Parent</name>
   <url>https://www.unboundid.com</url>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <modules>
     <module>unboundid-server-sdk-docs-maven-plugin</module>
     <module>unboundid-server-sdk-archetype</module>

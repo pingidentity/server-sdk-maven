@@ -38,12 +38,4 @@
     </profile>
   </profiles>
 
-  <dependencies>
-    <dependency>
-      <groupId>com.unboundid.product.ds</groupId>
-      <artifactId>server-sdk</artifactId>
-      <version>${server-sdk.version}</version>
-    </dependency>
-  </dependencies>
-
 </project>

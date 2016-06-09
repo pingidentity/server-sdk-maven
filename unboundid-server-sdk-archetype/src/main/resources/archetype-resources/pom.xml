@@ -233,7 +233,7 @@
       <plugin>
         <groupId>com.unboundid.sdk</groupId>
         <artifactId>unboundid-server-sdk-docs-maven-plugin</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2-SNAPSHOT</version>
         <configuration>
           <!-- The following configuration may be customized, if needed. -->
           <velocityResourceLoaderPath>${project.basedir}/src/main/resources/velocity</velocityResourceLoaderPath>
@@ -247,6 +247,11 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>${project.artifactId}</artifactId>
             <version>${project.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>com.unboundid.product.ds</groupId>
+            <artifactId>server-sdk</artifactId>
+            <version>${server-sdk.maven-version}</version>
           </dependency>
         </dependencies>
         <executions>

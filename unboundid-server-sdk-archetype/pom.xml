@@ -24,6 +24,50 @@
   </developers>
 
   <build>
+    <plugins>
+      <!--
+      This plugin is responsible for updating the version of the server-sdk-docs
+      plugin in the archetype pom. Note that this replacement is done in-place,
+      i.e. it modifies the specified file directly, and no copy is made. This is
+      important because you do not want to accidentally commit this change, as it
+      will mean that the next build cannot perform the replacement.
+
+      If the file is already staged, remove from staging with
+      git reset HEAD unboundid-server-sdk-archetype/src/main/resources/archetype-resources/pom.xml
+
+      If not staged, discard your changes with
+      git checkout unboundid-server-sdk-archetype/src/main/resources/archetype-resources/pom.xml
+      -->
+      <plugin>
+        <groupId>com.google.code.maven-replacer-plugin</groupId>
+        <artifactId>replacer</artifactId>
+        <version>1.5.3</version>
+        <executions>
+          <execution>
+            <id>replace-docs-version-number</id>
+            <goals>
+              <goal>replace</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <ignoreMissingFile>false</ignoreMissingFile>
+          <file>${project.basedir}/src/main/resources/archetype-resources/pom.xml</file>
+          <regex>false</regex>
+          <replacements>
+            <replacement>
+              <!--
+              It is important that "unboundid-server-sdk-docs-maven-plugin.version"
+              not be defined within the scope of this pom, or this token will need
+              to be updated.
+              -->
+              <token><![CDATA[<version>${unboundid-server-sdk-docs-maven-plugin.version}</version> <!-- REPLACE ME -->]]></token>
+              <value><![CDATA[<version>${project.version}</version>]]></value>
+            </replacement>
+          </replacements>
+        </configuration>
+      </plugin>
+    </plugins>
     <resources>
       <resource>
         <directory>src/main/resources</directory>

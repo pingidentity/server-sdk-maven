@@ -9,33 +9,38 @@
     </head>
 
     <body>
-        <div class="titletable" style="overflow:hidden" border="0" width="100%">
-            <div style="float:left" width="50%">
+        <header class="titletable">
+            <div class="title" width="50%">
                 <h1>Generated Extension Documentation</h1>
             </div>
-            <div style="float:right" width="50%">
+            <div class="logo" width="50%">
                 <a href="http://www.unboundid.com" target="_parent">
                     <img src="images/vendor-name-small-on-white.png" width="104" height="33" border="0" alt="UnboundID Corp.">
                 </a>
             </div>
-        </div>
+        </header>
 
-        <h2>Documentation for Individual Extensions:</h2>
-        <ul>
-          #foreach ($extension in $extensions)
-            <li><a href="$VelocityUtils.getExtensionFilename($extension)">$extension.getExtensionName()</a></li>
-          #end
-        </ul>
+        <section id="content">
 
-        <br>
-        <br>
+          <section id="extension-docs">
+            <h2>Documentation for Individual Extensions</h2>
+            <ul>
+              #foreach ($extension in $extensions)
+                <li><a href="$VelocityUtils.getExtensionFilename($extension)">$extension.getExtensionName()</a></li>
+              #end
+            </ul>
+          </section>
 
-        <h2>Generated API Documentation</h2>
+          <section id="javadocs">
+            <h2>Generated API Documentation</h2>
 
-        <ul>
-            <li><a href="javadoc/index.html">Javadoc</a></li>
-        </ul>
+            <ul>
+                <li><a href="javadoc/index.html">Javadoc</a></li>
+            </ul>
+          </section>
 
-        <div class="copyright-footer">Copyright &copy; 2016 &ndash; UnboundID Corp &ndash; All rights reserved.</div>
+        </section>
+
+        <footer>Copyright &copy; 2016 &ndash; UnboundID Corp &ndash; All rights reserved.</footer>
     </body>
 </html>

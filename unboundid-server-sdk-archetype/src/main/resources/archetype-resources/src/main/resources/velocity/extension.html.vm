@@ -9,25 +9,29 @@
     </head>
 
     <body>
-      <div class="titletable" style="overflow:hidden" border="0" width="100%">
-          <div style="float:left" width="50%">
+      <header class="titletable">
+          <div class="title" width="50%">
               <h1>Generated Documentation for $extension.getExtensionName()</h1>
           </div>
-          <div style="float:right" width="50%">
+          <div class="logo" width="50%">
               <a href="http://www.unboundid.com" target="_parent">
                   <img src="images/vendor-name-small-on-white.png" width="104" height="33" border="0" alt="UnboundID Corp.">
               </a>
           </div>
-      </div>
+      </header>
 
+      <section id="content">
 
+        <section id="description">
           #set($description = $extension.getExtensionDescription())
           #if($description && !$description.isEmpty())
                 #foreach($paragraph in $description)
                 <p>$paragraph</p>
                 #end
           #end
+        </section>
 
+        <section id="arguments">
           #set($extensionArguments = $VelocityUtils.getExtensionArguments($extension))
           #if(!$extensionArguments.isEmpty())
               <h2>Allowed Arguments</h2>
@@ -60,10 +64,11 @@
                   </p>
               #end
           #end
+        </section>
 
+        <section id="usages">
           #set($exampleUsages = $VelocityUtils.getExampleUsages($extension))
           #if(!$exampleUsages.isEmpty())
-              <br>
               <h2>Example Configurations</h2>
               #foreach($example in $exampleUsages.entrySet())
                 <p>$example.getValue()</p>
@@ -79,7 +84,10 @@
                 </ul>
               #end
           #end
+        </section>
 
-        <div class="copyright-footer">Copyright &copy; 2016 &ndash; UnboundID Corp &ndash; All rights reserved.</div>
+      </section>
+
+      <footer>Copyright &copy; 2016 &ndash; UnboundID Corp &ndash; All rights reserved.</footer>
     </body>
 </html>

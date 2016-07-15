@@ -1,258 +1,237 @@
-/* ========== GLOBAL STYLES ========== */
-
 body {
-    background: #647a93 url('images/bg.gif') repeat-x top left;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
-
-img {
-    border: none;
-    margin: 0;
-    padding: 0;
-    outline: none;
-}
-
-img a:link, img a:visited { outline: none; }
-
-.hr { height: 1px; border-top:1px solid #e8e8e8; width: 100%; margin: 10px auto; }
-
-/* ========== TEXT ========== */
-
-p {
-    font: normal 9pt Arial;
-    line-height: 18px;
-    color: #333;
-    margin: 0 0 20px 0;
-    padding: 0;
-}
-
-table {
-    font: normal 9pt Arial;
-    line-height: 18px;
-    color: #333;
-    margin: 0 0 20px 0;
-    padding: 0;
-}
-
-div {
-    margin: 0;
-    padding: 0;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #2D4B66;
+    background-color: #FFFFFF;
+    margin: 20px 15px
 }
 
 h1 {
-    color: #f57b20;
-    font: bold 25pt Arial;
-    line-height: 30pt;
-    padding: 0 0 5px;
-    margin: 0;
+    font-size: 2.0em;
+    font-weight: normal;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    color: #2D4B66
 }
 
-h1.home { padding-bottom:10px; }
-
 h2 {
-    color: #5e748c;
-    font: normal 14pt Arial;
-    line-height: 17pt;
-    padding: 0 0 20px;
-    margin: 0;
+    font-size: 1.6em;
+    font-weight: normal;
+    color: #2D4B66
 }
 
 h3 {
-    color: #333333;
-    font: bold 11pt Arial;
-    line-height: 14pt;
-    padding: 0 0 7px 0;
-    margin: 0;
-}
-
-ul.list {
-    margin:0 0 20px;
-    padding:0;
-}
-
-ul.list li {
-    margin: 0 0 10px 10px;
-    padding:0 0 0 12px;
-    font: normal 9pt Arial;
-    color: #333;
-    list-style-type: none;
-    line-height: 18px;
-}
-
-
-ul.listWhite {
-    margin:0 0 20px 0;
-    padding:0;
-}
-
-ul.listWhite li {
-    margin: 0 0 0 10px;
-    padding:0 0 0 12px;
-    font: normal 9pt Arial;
-    color: #333;
-    list-style-type: none;
-    line-height: 18px;
-}
-
-.smallbold {
-    font: bold 10px Arial;
-    color: #333;
-}
-
-td {
-    font: normal 9pt Arial;
-}
-
-td.date {
+    font-size: 1.4em;
     font-weight: bold;
-    text-align: right;
+    margin: 1.5em 0em .8em 0em;
+    padding-top: 10px;
+    color: #2D4B66
 }
 
-.source {
-    font-size: 6pt Arial !important;
-    color: #CCC; }
+h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2D4B66;
+    margin: 1.2em 0em .8em 0em;
+}
 
-/* ========== LINKS ========== */
+h5 {
+    font-size: 1.0em;
+    font-weight: bold;
+    margin: 1.2em 0em .8em 0em;
+}
 
-a, a:visited {
-    color: #f57b20;
-    text-decoration: underline;
-    outline: none;
+h6 {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 1.2em 0em .8em 0em;
+}
+
+p {
+    margin: .75em 0 1em 0;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+a:link {
+    color: #647a92;
+    text-decoration: underline
+}
+
+a:visited {
+    color: #647a92;
+    text-decoration: underline
 }
 
 a:hover {
-    color: #f57b20;
-    text-decoration: none;
-}
-
-a.learn {
-    color:#f57b20;
-    font:bold 10pt Arial;
-    text-transform:uppercase;
+    color: #1d3147;
+    text-decoration: underline
 }
 
 pre {
-    background-color: #dde2e7;
+    background-color: #C9D1D8;
     margin: 15px 30px;
     padding: 10px 10px;
-    border: 1px solid #2d4b66;
+    border: 1px solid #2D4B66
 }
 
-#logo {
-    background:url('images/logo.gif') no-repeat top left;
-    width:274px;
-    height:99px;
-    float:left;
+ol {
+    list-style-type: decimal
 }
 
-/* ========== Overall Styles ========== */
-
-#wrapper {
-    margin: 12px auto 20px auto;
-    padding: 0;
-    width: 924px;
+ol ol {
+    list-style-type: lower-alpha
 }
 
-#content {
-    width: 924px;
-    border-bottom: 17px solid #1e324b;
-    background: #FFF url(images/content_bg.gif) repeat-y top left;
+ol ol ol {
+    list-style-type: lower-roman
 }
 
-#content section {
-    padding: 20px;
-    font: normal 9pt Helvetica, Arial, sans-serif;
+ol ol ol ol {
+    list-style-type: decimal
 }
 
-footer {
-    margin: 10px 20px 0 0;
-    color: #9db2ce;
-    font: normal 8pt Arial;
-    width: 904px;
-    text-align:right;
+ol ol ol ol ol {
+    list-style-type: lower-alpha
 }
 
-footer a:link, footer a:visited {
-    color: #9db2ce;
-    font: normal 8pt Arial;
-    text-decoration: none;
+ol ol ol ol ol ol {
+    list-style-type: lower-roman
 }
 
-footer a:hover {
-    color:#f57b20;
-    text-decoration: underline;
+ul ol {
+    list-style-type: decimal
 }
 
-.boxheader {
-    height:21px;
-    width:304px;
-    padding:5px 0 0 0;
-    margin:0;
+ul ol ol {
+    list-style-type: lower-alpha
 }
 
-.boxheader span {
-    color:#FFF;
-    font:bold 10pt Arial;
-    padding:0 0 0 0;
-    margin:0;
+ul ol ol ol {
+    list-style-type: lower-roman
 }
 
-.boxheader2liner {
-    height:56px;
-    color:#FFF;
-    width:304px;
-    font:bold 10pt Arial;
-    padding:10px 10px 10px 10px;
-    text-align:center;
-    margin:0;
-    clear:both;
+ul ol ol ol ol {
+    list-style-type: decimal
 }
 
-.boxcontent {
-    width:294px;
-    background:#ffc090;
-    padding:10px 15px 5px 15px;
-    margin: -20px 0 0 0;
-    line-height: 18px !important;
-    font:normal 8pt Arial;
+ul ol ol ol ol ol {
+    list-style-type: lower-alpha
 }
 
-.news {
-    width:125px;
-    padding-top:20px;
+ul ol ol ol ol ol ol {
+    list-style-type: lower-roman
 }
 
-/* ======= LIST ITEMS ======= */
-
-header {
-    width: 924px;
-    height: 99px;
-    margin: 0;
-    padding: 0;
+ul {
+    list-style: square
 }
 
-header a img {
+ol {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em
+}
+
+ul {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em
+}
+
+li {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em
+}
+
+li > p {
+    margin-top: 0.2em
+}
+
+dl {
+    margin-top: 10px
+}
+
+dl dt {
+    font-weight: bold;
+    margin-bottom: 3px
+}
+
+dl dd {
+    margin-left: 10px;
+}
+
+table {
+    border: none;
+    border-bottom: dotted 1px #2D4B66;
+    margin: 0px 0px 20px;
+    font-size: 12px;
+}
+
+table tr th {
+    border: none;
+    border-top: dotted 1px #2D4B66;
+    padding: 5px 10px;
+    background-color: #C9D1D8;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: bottom;
+    empty-cells: show;
+    font-size: 12px;
+}
+
+table tr td {
+    border: none;
+    border-top: dotted 1px #2D4B66;
+    padding: 4px 10px;
+    vertical-align: top;
+    empty-cells: show;
+    font-size: 12px;
+}
+
+.titletable {
+    border-top: none;
+    border-bottom: 1px #2D4B66 solid;
+    overflow: hidden
+}
+
+.titletable .title {
     float: left;
 }
 
-header #title {
-    background: url('images/nav_bg.gif') no-repeat top right;
-    margin: 0 auto;
-    padding: 0 auto;
-    float:right;
-    width:650px;
-    height:99px;
-    line-height:99px;
-    text-align: center
+.titletable .logo {
+    float: right;
 }
 
-header #title h1 {
-    display: inline-block;
-    margin: 0 auto;
-    text-align: center;
-    vertical-align: middle;
-    line-height: normal;
+.titletable h2 {
+    font-size: 2.1em;
+    border: none;
 }
 
+.titletable td {
+    vertical-align: top;
+    border-top: none;
+    padding-left: 0px
+}
+
+hr {
+    border: 0;
+    color: #2D4B66;
+    background-color: #2D4B66;
+    height: 1px;
+    width: 100%;
+    text-align: left;
+}
+
+.javadocs, .arguments, .usages {
+    margin-top: 30px;
+}
+
+footer {
+    border-top: 1px solid #2D4B66;
+    width: 100%;
+    text-align: left;
+    font-size: small;
+    margin-top: 30px;
+    padding-top: 10px
+}

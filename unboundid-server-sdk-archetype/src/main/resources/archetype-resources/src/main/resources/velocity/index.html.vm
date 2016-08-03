@@ -1,47 +1,46 @@
 <!DOCTYPE HTML>
 
 <html lang="en">
-<head>
-    <title>Generated Extension Documentation</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="unboundid.css" type="text/css">
-    <link rel="shortcut icon" href="images/favicon.ico">
-</head>
+    <head>
+        <title>Generated Extension Documentation</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="unboundid.css" type="text/css">
+        <link rel="shortcut icon" href="images/favicon.ico">
+    </head>
 
-<body>
-<div id="wrapper">
-    <header>
-        <a href="http://www.unboundid.com/" title="Generated Extension Documentation" id="logo">
-            <img src="images/+___.gif" width="274" height="99" alt="UnboundID"/>
-        </a>
-        <div id="title">
-            <h1>Generated Extension Documentation</h1>
-        </div>
-    </header>
+    <body>
+        <header class="titletable">
+            <div class="title" width="50%">
+                <h1>Generated Extension Documentation</h1>
+            </div>
+            <div class="logo" width="50%">
+                <a href="http://www.unboundid.com" target="_parent">
+                    <img src="images/vendor-name-small-on-white.png" width="104" height="33" border="0" alt="UnboundID Corp.">
+                </a>
+            </div>
+        </header>
 
-    <section id="content">
-      <section>
-        <h2>Documentation for Individual Extensions:</h2>
+        <section id="content">
 
-        <ul>
-          #foreach ($extension in $extensions)
-              <li><a href="$VelocityUtils.getExtensionFilename($extension)">$extension.getExtensionName()</a></li>
-          #end
-        </ul>
-      </section>
+          <section id="extension-docs">
+            <h2>Documentation for Individual Extensions</h2>
+            <ul>
+              #foreach ($extension in $extensions)
+                <li><a href="$VelocityUtils.getExtensionFilename($extension)">$extension.getExtensionName()</a></li>
+              #end
+            </ul>
+          </section>
 
-      <section>
-        <h2>Generated API Documentation</h2>
+          <section id="javadocs">
+            <h2>Generated API Documentation</h2>
 
-        <ul>
-            <li><a href="javadoc/index.html">Javadoc</a></li>
-        </ul>
-      </section>
-    </section>
+            <ul>
+                <li><a href="javadoc/index.html">Javadoc</a></li>
+            </ul>
+          </section>
 
-    <footer>
-        Copyright &copy; 2016 &ndash; UnboundID Corp. &ndash; All rights reserved.
-    </footer>
-</div>
-</body>
+        </section>
+
+        <footer>Copyright &copy; 2016 &ndash; UnboundID Corp &ndash; All rights reserved.</footer>
+    </body>
 </html>

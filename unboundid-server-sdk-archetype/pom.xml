@@ -45,6 +45,7 @@
         <executions>
           <execution>
             <id>replace-docs-version-number</id>
+            <phase>generate-resources</phase>
             <goals>
               <goal>replace</goal>
             </goals>

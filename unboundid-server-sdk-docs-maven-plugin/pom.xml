@@ -19,6 +19,9 @@
     <developer>
       <name>Jacob Childress</name>
     </developer>
+    <developer>
+      <name>Eric Zheng</name>
+    </developer>
   </developers>
 
   <dependencies>

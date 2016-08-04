@@ -40,7 +40,7 @@
     <!--
     The Maven version string of the Server SDK dependency to build against.
 
-    EXAMPLE:  <server-sdk.maven-version>5.3.0.0-SNAPSHOT</server-sdk.maven-version>
+    EXAMPLE:  <server-sdk.maven-version>6.0.0.0-SNAPSHOT</server-sdk.maven-version>
     -->
     <server-sdk.maven-version>${server-sdk.version}</server-sdk.maven-version>
 

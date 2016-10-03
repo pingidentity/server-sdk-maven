@@ -1,4 +1,4 @@
-# UnboundID Server SDK Maven Helpers [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent) [![Build Status](https://travis-ci.org/UnboundID/server-sdk-maven.svg?branch=master)](https://travis-ci.org/UnboundID/server-sdk-maven) [![Javadocs](http://www.javadoc.io/badge/com.unboundid/server-sdk-maven-parent.svg)](http://www.javadoc.io/doc/com.unboundid/server-sdk-maven-parent)
+# UnboundID Server SDK Maven Helpers [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent) [![Build Status](https://travis-ci.org/UnboundID/server-sdk-maven.svg?branch=master)](https://travis-ci.org/UnboundID/server-sdk-maven)
 
 This repository provides two components that can be used to develop and package 
 [UnboundID Server SDK](http://blog.arnaudlacour.com/2011/01/introducing-unboundid-server-sdk-future.html) 

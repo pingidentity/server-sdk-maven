@@ -3,7 +3,6 @@ body {
     font-size: 12px;
     color: #2D4B66;
     background-color: #FFFFFF;
-    margin: 20px 15px
 }
 
 h1 {
@@ -192,11 +191,15 @@ table tr td {
 .titletable {
     border-top: none;
     border-bottom: 1px #2D4B66 solid;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .titletable .title {
     float: left;
+}
+
+.titletable .title h1 {
+    padding-top: 16px;
 }
 
 .titletable .logo {

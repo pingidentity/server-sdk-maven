@@ -9,13 +9,13 @@
     </head>
 
     <body>
-      <header class="titletable">
+      <header class="titletable" width="100%">
           <div class="title" width="50%">
               <h1>Generated Documentation for $extension.getExtensionName()</h1>
           </div>
           <div class="logo" width="50%">
               <a href="http://www.unboundid.com" target="_parent">
-                  <img src="images/vendor-name-small-on-white.png" width="104" height="33" border="0" alt="UnboundID Corp.">
+                  <img src="images/vendor-name-on-white.png" width="198" height="58" border="0" alt="Ping Identity">
               </a>
           </div>
       </header>
@@ -88,6 +88,6 @@
 
       </section>
 
-      <footer>Copyright &copy; 2016 &ndash; UnboundID Corp &ndash; All rights reserved.</footer>
+      <footer>Copyright &copy; 2010-2016&ndash; UnboundID Corp. &ndash; All rights reserved.</footer>
     </body>
 </html>

@@ -9,14 +9,8 @@ The components are:
 
 | Component | Description |
 | --- | --- |
-| unboundid-server-sdk-archetype | Generates a Maven project for building extension bundles. |
-| unboundid-server-sdk-docs-maven-plugin | Generates an extension bundle's HTML documentation. |
-
-## Note
-
-The UnboundID Server SDK is not currently available on Maven Central; for the 
-time being, these components may only be used from the UnboundID internal 
-network.
+| server-sdk-archetype | Generates a Maven project for building extension bundles. |
+| server-sdk-docs-maven-plugin | Generates an extension bundle's HTML documentation. |
 
 ## Usage
 
@@ -24,9 +18,9 @@ Use the archetype to generate a Maven project, providing your own values for
 `groupId` and `artifactId`:
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.unboundid.sdk \
-  -DarchetypeArtifactId=unboundid-server-sdk-archetype \
-  -DarchetypeVersion=1.0.2 \
+mvn archetype:generate -DarchetypeGroupId=com.unboundid \
+  -DarchetypeArtifactId=server-sdk-archetype \
+  -DarchetypeVersion=1.0.3 \
   -DgroupId=com.example -DartifactId=my-extension \
   -DinteractiveMode=false
 ```

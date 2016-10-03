@@ -232,8 +232,8 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>com.unboundid.sdk</groupId>
-        <artifactId>unboundid-server-sdk-docs-maven-plugin</artifactId>
+        <groupId>com.unboundid</groupId>
+        <artifactId>server-sdk-docs-maven-plugin</artifactId>
         <version>1.0.3-SNAPSHOT</version>
         <configuration>
           <!-- The following configuration may be customized, if needed. -->

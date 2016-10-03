@@ -3,28 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <artifactId>unboundid-server-sdk-maven-parent</artifactId>
-    <groupId>com.unboundid.sdk</groupId>
+    <artifactId>server-sdk-maven-parent</artifactId>
+    <groupId>com.unboundid</groupId>
     <version>1.0.3-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>unboundid-server-sdk-archetype</artifactId>
+  <artifactId>server-sdk-archetype</artifactId>
   <name>UnboundID Server SDK Maven Archetype</name>
   <description>A Maven archetype that can generate a project for building an
     UnboundID Server SDK extension bundle.</description>
-  <url>https://www.unboundid.com</url>
-
-  <inceptionYear>2016</inceptionYear>
-
-  <developers>
-    <developer>
-      <name>Jacob Childress</name>
-    </developer>
-    <developer>
-      <name>Eric Zheng</name>
-    </developer>
-  </developers>
 
   <build>
     <plugins>
@@ -65,7 +53,7 @@
               not be defined within the scope of this pom, or this token will need
               to be updated.
               -->
-              <token><![CDATA[<version>${unboundid-server-sdk-docs-maven-plugin.version}</version> <!-- REPLACE ME -->]]></token>
+              <token><![CDATA[<version>${server-sdk-docs-maven-plugin.version}</version> <!-- REPLACE ME -->]]></token>
               <value><![CDATA[<version>${project.version}</version>]]></value>
             </replacement>
           </replacements>

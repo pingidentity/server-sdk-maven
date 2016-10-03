@@ -2,27 +2,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <artifactId>unboundid-server-sdk-maven-parent</artifactId>
-    <groupId>com.unboundid.sdk</groupId>
+    <artifactId>server-sdk-maven-parent</artifactId>
+    <groupId>com.unboundid</groupId>
     <version>1.0.3-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>unboundid-server-sdk-docs-maven-plugin</artifactId>
+  <artifactId>server-sdk-docs-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
   <name>UnboundID Server SDK Extension Docs Plugin</name>
-  <url>https://www.unboundid.com</url>
-
-  <inceptionYear>2016</inceptionYear>
-
-  <developers>
-    <developer>
-      <name>Jacob Childress</name>
-    </developer>
-    <developer>
-      <name>Eric Zheng</name>
-    </developer>
-  </developers>
 
   <dependencies>
     <dependency>

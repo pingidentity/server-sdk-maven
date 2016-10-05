@@ -1,4 +1,4 @@
-# UnboundID Server SDK Maven Helpers [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent) [![Build Status](https://travis-ci.org/UnboundID/server-sdk-maven.svg?branch=master)](https://travis-ci.org/UnboundID/server-sdk-maven)
+# UnboundID Server SDK Maven Helpers [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent) [![Build Status](https://travis-ci.org/UnboundID/server-sdk-maven.svg?branch=master)](https://travis-ci.org/UnboundID/server-sdk-maven) [![Javadocs](http://www.javadoc.io/badge/com.unboundid/server-sdk-maven-parent.svg)](http://www.javadoc.io/doc/com.unboundid/server-sdk-maven-parent)
 
 This repository provides two components that can be used to develop and package 
 [UnboundID Server SDK](http://blog.arnaudlacour.com/2011/01/introducing-unboundid-server-sdk-future.html) 
@@ -35,7 +35,7 @@ Use the archetype to generate a Maven project, providing your own values for
 ```
 mvn archetype:generate -DarchetypeGroupId=com.unboundid \
   -DarchetypeArtifactId=server-sdk-archetype \
-  -DarchetypeVersion=1.0.3 \
+  -DarchetypeVersion=1.0.8 \
   -DgroupId=com.example -DartifactId=my-extension \
   -DinteractiveMode=false
 ```

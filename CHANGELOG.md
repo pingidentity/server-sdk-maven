@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.9] - 2016/10/19
+### Fixed
+- Archetype: Removed dependency on a snapshot version of the docs plugin.
+
 ## [1.0.8] - 2016/10/04
 ### Changed
 - General: This was a test release for an updated build process and contains no changes to functionality.

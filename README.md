@@ -30,6 +30,8 @@ generates will use the docs plugin automatically.
 
 ## Usage
 
+[![asciicast](https://asciinema.org/a/105217.png)](https://asciinema.org/a/105217)
+
 Use the archetype to generate a Maven project, providing your own values for 
 `groupId` and `artifactId`:
 

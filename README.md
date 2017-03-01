@@ -47,6 +47,34 @@ or replace. You will also need to customize the generated `pom.xml`.
 When you are ready to build an extension bundle, run `mvn package`. 
 The extension bundle will be created as a zip in the `target` directory.
 
+## Developer notes
+
+The following notes may be useful to developers making changes to this project. If you're a user of this project, you can ignore this section.
+
+### Using a local copy
+
+If you've made changes locally that you wish to test, don't forget to install the local copy:
+
+```
+mvn install
+```
+
+When generating a project from your local archetype, you need to tell Maven to use the local archetype catalog with the `archetypeCatalog` option:
+
+```
+mvn archetype:generate -DarchetypeGroupId=com.unboundid \
+  -DarchetypeArtifactId=server-sdk-archetype \
+  -DarchetypeVersion=1.0.10 \
+  -DgroupId=com.example -DartifactId=my-extension \
+  -DinteractiveMode=false -DarchetypeCatalog=local
+```
+
+### Updating the Server SDK version
+
+To update the Server SDK version for a new server release, you must make two changes.
+
+The `server-sdk.version` property in the [parent POM](./pom.xml) determines the Server SDK version used by the server-sdk-docs-maven-plugin and server-sdk-archetype components. It does _not_ the Server SDK version used by projects generated from the archetype. That change should be made to the `server-sdk.version` property in the [archetype POM](./server-sdk-archetype/pom.xml).
+
 ## License
 
 This is licensed under the Apache License 2.0.

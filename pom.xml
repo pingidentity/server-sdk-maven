@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
   <name>UnboundID Server SDK Maven Parent</name>
   <description>Components allowing developers to create and package UnboundID Server SDK extensions using Maven.</description>
-  <url>https://github.com/UnboundID/server-sdk-maven</url>
+  <url>https://github.com/pingidentity/server-sdk-maven</url>
   <version>1.0.12-SNAPSHOT</version>
 
   <licenses>
@@ -31,8 +31,8 @@
   </developers>
 
   <scm>
-    <url>https://github.com/UnboundID/server-sdk-maven</url>
-    <connection>scm:git:https://github.com/UnboundID/server-sdk-maven</connection>
+    <url>https://github.com/pingidentity/server-sdk-maven</url>
+    <connection>scm:git:https://github.com/pingidentity/server-sdk-maven</connection>
   </scm>
 
   <modules>

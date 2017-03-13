@@ -1,4 +1,4 @@
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent) [![Build Status](https://travis-ci.org/UnboundID/server-sdk-maven.svg?branch=master)](https://travis-ci.org/UnboundID/server-sdk-maven) [![Javadocs](https://www.javadoc.io/badge/com.unboundid/server-sdk-maven-parent.svg)](https://www.javadoc.io/doc/com.unboundid/server-sdk-maven-parent)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent) [![Build Status](https://travis-ci.org/pingidentity/server-sdk-maven.svg?branch=master)](https://travis-ci.org/pingidentity/server-sdk-maven) [![Javadocs](https://www.javadoc.io/badge/com.unboundid/server-sdk-maven-parent.svg)](https://www.javadoc.io/doc/com.unboundid/server-sdk-maven-parent)
 # UnboundID Server SDK Maven Helpers
 
 This repository provides two components that can be used to develop and package 

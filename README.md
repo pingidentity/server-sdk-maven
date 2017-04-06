@@ -38,13 +38,48 @@ Use the archetype to generate a Maven project, providing your own values for
 ```
 mvn archetype:generate -DarchetypeGroupId=com.unboundid \
   -DarchetypeArtifactId=server-sdk-archetype \
-  -DarchetypeVersion=1.0.11 \
+  -DarchetypeVersion=1.0.12 \
   -DgroupId=com.example -DartifactId=my-extension \
   -DinteractiveMode=false
 ```
 
-The new project will contain an example extension, which you should customize 
-or replace. You will also need to customize the generated `pom.xml`.
+The new project will contain an example extension class in `src/main/java`. 
+At a minimum, you will need to customize or replace this class, as well 
+as the generated `pom.xml`.
+
+If you'd like other assets to appear in the extension bundle, place 
+them in a subdirectory of `src/main/assembly` and configure `assembly.xml` 
+to include the subdirectory (documentation 
+[here](http://maven.apache.org/plugins/maven-assembly-plugin/)). Any 
+files that you place in `src/main/assembly/config` will be automatically 
+copied over.
+
+```
+.
+├── pom.xml # Extension metadata and extensions go here.
+└── src
+    └── main
+        ├── assembly # Custom files may be placed here; configure with assembly.xml.
+        │   ├── assembly.xml # Determines the contents of the extension bundle.
+        │   ├── config 
+        │   │   └── update
+        │   │       └── file-directives.properties # Governs how files are replaced when updating.
+        │   └── docs
+        │       ├── images
+        │       │   ├── favicon.ico
+        │       │   └── vendor-name-on-white.png
+        │       └── unboundid.css
+        ├── java
+        │   └── com
+        │       └── example
+        │           └── MyExampleExtension.java # Replace this with your extension.
+        └── resources
+            ├── javadoc
+            │   └── ping-javadoc-stylesheet.css
+            └── velocity
+                ├── extension.html.vm
+                └── index.html.vm
+```
 
 When you are ready to build an extension bundle, run `mvn package`. 
 The extension bundle will be created as a zip in the `target` directory.
@@ -69,7 +104,7 @@ Maven to use the local archetype catalog with the `archetypeCatalog` option:
 ```
 mvn archetype:generate -DarchetypeGroupId=com.unboundid \
   -DarchetypeArtifactId=server-sdk-archetype \
-  -DarchetypeVersion=1.0.11 \
+  -DarchetypeVersion=1.0.12 \
   -DgroupId=com.example -DartifactId=my-extension \
   -DinteractiveMode=false -DarchetypeCatalog=local
 ```

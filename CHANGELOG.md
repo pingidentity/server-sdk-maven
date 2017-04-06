@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.12] - 2017/03/06
+### Changed
+- General: Added instructions for customizing the contents of the extension bundle.
+- Archetype: When packaging the extension bundle, copy the entire `config` directory instead of only `config/update`.
+
+## [1.0.11] - 2017/03/01
+### Changed
+- Archetype: Set the default Server SDK version to 6.0.1.0.
+
 ## [1.0.10] - 2016/10/19
 ### Fixed
 - Archetype: Removed dependency on a snapshot version of the docs plugin.

@@ -8,9 +8,12 @@
     <format>dir</format>
   </formats>
   <fileSets>
+    <!-- Copy the extension config directory.
+    The file config/update/file-directives.properties is expected by
+    the server, but user-provided files can be placed here, too. -->
     <fileSet>
-      <outputDirectory>config/update</outputDirectory>
-      <directory>${project.basedir}/src/main/assembly/config/update</directory>
+      <outputDirectory>config</outputDirectory>
+      <directory>${project.basedir}/src/main/assembly/config</directory>
     </fileSet>
     <!-- Copy generated extension documentation. This path must match the
     velocityResourceLoaderPath value in the POM. -->

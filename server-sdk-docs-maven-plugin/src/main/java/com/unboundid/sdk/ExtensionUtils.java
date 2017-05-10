@@ -101,11 +101,9 @@ public final class ExtensionUtils
           {
             extensionList.add((UnboundIDExtension) c.newInstance());
           }
-          catch (final Exception e)
+          catch (final IllegalAccessException | InstantiationException e)
           {
-            e.printStackTrace();
-            // This shouldn't happen, but if it does, then there's not much that
-            // can be done about it.
+            // Ignore non-public or abstract classes.
           }
         }
       }

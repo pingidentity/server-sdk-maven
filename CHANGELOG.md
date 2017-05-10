@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.13] - 2017/04/10
+### Changed
+- Docs Maven Plugin: Don't attempt to create docs for non-public or abstract classes. 
+
 ## [1.0.12] - 2017/03/06
 ### Changed
 - General: Added instructions for customizing the contents of the extension bundle.

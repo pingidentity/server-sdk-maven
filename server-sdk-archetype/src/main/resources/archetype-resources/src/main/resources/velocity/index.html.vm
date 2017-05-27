@@ -4,7 +4,7 @@
     <head>
         <title>Generated Extension Documentation</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="unboundid.css" type="text/css">
+        <link rel="stylesheet" href="ping.css" type="text/css">
         <link rel="shortcut icon" href="images/favicon.ico">
     </head>
 
@@ -14,7 +14,7 @@
                 <h1>Generated Extension Documentation</h1>
             </div>
             <div class="logo" width="50%">
-                <a href="http://www.unboundid.com" target="_parent">
+                <a href="https://www.pingidentity.com" target="_parent">
                     <img src="images/vendor-name-on-white.png" width="198" height="58" border="0" alt="Ping Identity">
                 </a>
             </div>
@@ -41,6 +41,6 @@
 
         </section>
 
-        <footer>Copyright &copy; 2010-2016&ndash; UnboundID Corp. &ndash; All rights reserved.</footer>
+        <footer>Copyright &copy; 2010-2017&ndash; Ping Identity Corporation &ndash; All rights reserved.</footer>
     </body>
 </html>

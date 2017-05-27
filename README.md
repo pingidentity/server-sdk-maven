@@ -68,7 +68,7 @@ copied over.
         │       ├── images
         │       │   ├── favicon.ico
         │       │   └── vendor-name-on-white.png
-        │       └── unboundid.css
+        │       └── ping.css
         ├── java
         │   └── com
         │       └── example

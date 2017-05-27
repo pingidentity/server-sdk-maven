@@ -38,7 +38,7 @@ Use the archetype to generate a Maven project, providing your own values for
 ```
 mvn archetype:generate -DarchetypeGroupId=com.unboundid \
   -DarchetypeArtifactId=server-sdk-archetype \
-  -DarchetypeVersion=1.0.12 \
+  -DarchetypeVersion=1.0.13 \
   -DgroupId=com.example -DartifactId=my-extension \
   -DinteractiveMode=false
 ```
@@ -104,7 +104,7 @@ Maven to use the local archetype catalog with the `archetypeCatalog` option:
 ```
 mvn archetype:generate -DarchetypeGroupId=com.unboundid \
   -DarchetypeArtifactId=server-sdk-archetype \
-  -DarchetypeVersion=1.0.13-SNAPSHOT \
+  -DarchetypeVersion=1.0.14-SNAPSHOT \
   -DgroupId=com.example -DartifactId=my-extension \
   -DinteractiveMode=false -DarchetypeCatalog=local
 ```

@@ -87,7 +87,8 @@ The extension bundle will be created as a zip in the `target` directory.
 ## Developer notes
 
 The following notes may be useful to developers making changes to this project. 
-If you're a user of this project, you can ignore this section.
+If you're a user of this project (i.e., an extension developer), you can ignore 
+this section.
 
 ### Using a local copy
 
@@ -108,6 +109,15 @@ mvn archetype:generate -DarchetypeGroupId=com.unboundid \
   -DgroupId=com.example -DartifactId=my-extension \
   -DinteractiveMode=false -DarchetypeCatalog=local
 ```
+
+### Automatic changes to server-sdk-archetype/pom.xml
+
+When you build the project, the [Maven Replacer Plugin](https://github.com/beiliubei/maven-replacer-plugin) 
+will perform a substitution on a `${server-sdk-docs-maven-plugin.version}` token 
+in the `server-sdk-archetype/pom.xml` file. This allows the server-sdk-docs-maven-plugin 
+version to be set correctly in the archetype POM. You should not commit this 
+change to `server-sdk-archetype/pom.xml`. Please see the comment in `project.build.plugins` 
+for more details.  
 
 ### Updating the Server SDK version
 

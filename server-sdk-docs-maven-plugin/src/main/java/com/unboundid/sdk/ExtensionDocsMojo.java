@@ -89,8 +89,9 @@ public class ExtensionDocsMojo extends AbstractMojo
     checkDirectory(outputDirectory);
 
     getLog().info("Loading UnboundID Server SDK extensions");
+    final ExtensionFinder extensionFinder = new ExtensionFinder(getLog());
     final List<UnboundIDExtension> extensions =
-        ExtensionUtils.findExtensions(srcDirectory);
+            extensionFinder.findExtensions(srcDirectory);
     if (extensions.isEmpty())
     {
       throw new MojoExecutionException(String.format(
@@ -209,7 +210,7 @@ public class ExtensionDocsMojo extends AbstractMojo
         }
         catch (IOException e)
         {
-          // Oh well
+          getLog().warn(e);
         }
       }
     }

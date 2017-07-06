@@ -20,14 +20,21 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.unboundid.directory.sdk.common.internal.UnboundIDExtension;
-
+import org.apache.maven.plugin.logging.Log;
 
 /**
  * This class provides utility methods used by {@link ExtensionDocsMojo} to
  * locate and instantiate Server SDK extension classes.
  */
-public final class ExtensionUtils
+public final class ExtensionFinder
 {
+  private Log logger;
+
+  public ExtensionFinder(final Log logger)
+  {
+    this.logger = logger;
+  }
+
   /**
    * Finds the classes for all extensions built from source in the specified
    * location.
@@ -38,7 +45,7 @@ public final class ExtensionUtils
    *
    * @return A list of all extension classes below the provided source root.
    */
-  public static List<UnboundIDExtension> findExtensions(final File sourceRoot)
+  public List<UnboundIDExtension> findExtensions(final File sourceRoot)
   {
     final LinkedList<UnboundIDExtension> extensionList = new LinkedList<>();
     findExtensionClasses(sourceRoot, null, extensionList);
@@ -57,9 +64,9 @@ public final class ExtensionUtils
    * @param  extensionList
    *           The list to which any extensions should be added.
    */
-  private static void findExtensionClasses(final File srcDirectory,
-                                           final String pkg,
-                                           final List<UnboundIDExtension> extensionList)
+  private void findExtensionClasses(final File srcDirectory,
+                                    final String pkg,
+                                    final List<UnboundIDExtension> extensionList)
   {
     if (!srcDirectory.exists())
     {
@@ -91,7 +98,7 @@ public final class ExtensionUtils
         }
         catch (final Throwable t)
         {
-          t.printStackTrace();
+          logger.warn(t);
           continue;
         }
 
@@ -103,7 +110,8 @@ public final class ExtensionUtils
           }
           catch (final IllegalAccessException | InstantiationException e)
           {
-            // Ignore non-public or abstract classes.
+            logger.debug("Exception occurred while processing an " +
+                    "UnboundIDExtension; probable non-public or abstract class", e);
           }
         }
       }
@@ -133,7 +141,7 @@ public final class ExtensionUtils
    * @return The files from the provided directory or an empty array if no files
    *         can be found. This method never returns {@code null}.
    */
-  public static File[] listFiles(final File directory)
+  private File[] listFiles(final File directory)
   {
     if (directory != null)
     {

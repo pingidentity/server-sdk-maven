@@ -37,6 +37,9 @@
     <dependencySet>
       <outputDirectory>.</outputDirectory>
       <useProjectArtifact>true</useProjectArtifact>
+      <includes>
+        <include>${artifact}</include>
+      </includes>
     </dependencySet>
     <!-- Copy dependencies to lib. -->
     <dependencySet>

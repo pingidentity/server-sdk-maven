@@ -5,7 +5,9 @@
   <id>server-sdk-extension-bundle-assembly</id>
   <formats>
     <format>zip</format>
-    <format>dir</format>
+    <!-- You can uncomment the following line if you want to examine the
+    build output without having to extract the zip artifact. -->
+    <!--<format>dir</format>-->
   </formats>
   <fileSets>
     <!-- Copy the extension config directory.
@@ -34,9 +36,7 @@
     <!-- Copy the project artifact to the root directory. -->
     <dependencySet>
       <outputDirectory>.</outputDirectory>
-      <includes>
-        <include>${artifact.artifactId}*</include>
-      </includes>
+      <useProjectArtifact>true</useProjectArtifact>
     </dependencySet>
     <!-- Copy dependencies to lib. -->
     <dependencySet>

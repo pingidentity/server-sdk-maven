@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 ## [1.0.14] - 2017/??/??
 ### Changed
 - General: Updated source code copyrights and hyperlinks; renamed `unboundid.css` to `ping.css`.
+- Archetype: Updated Maven Assembly Plugin version to 3.0.0.
+- Archetype: Fixed a Maven Assembly Plugin warning that was caused by using both zip and dir output format. The solution is to use zip only, but this can be manually undone, if desired. 
 
 ## [1.0.13] - 2017/04/10
 ### Changed

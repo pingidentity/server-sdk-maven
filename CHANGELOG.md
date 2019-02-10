@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 1.0.15 - unreleased
+### Changed
+- General: Updated source code copyrights
+
 ## [1.0.14] - 2017/07/06
 ### Changed
 - General: Updated source code copyrights and hyperlinks; renamed `unboundid.css` to `ping.css`.

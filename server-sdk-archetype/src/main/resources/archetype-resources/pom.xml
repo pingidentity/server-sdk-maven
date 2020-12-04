@@ -27,8 +27,8 @@
     <!--
     The Java compiler source and target versions for this project.
     -->
-    <source.version>1.7</source.version>
-    <target.version>1.7</target.version>
+    <source.version>1.8</source.version>
+    <target.version>1.8</target.version>
 
     <!--
     The Server SDK version for which this extension will be built.

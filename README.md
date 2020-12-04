@@ -1,22 +1,13 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.unboundid/server-sdk-maven-parent) [![Build Status](https://travis-ci.org/pingidentity/server-sdk-maven.svg?branch=master)](https://travis-ci.org/pingidentity/server-sdk-maven) [![Javadocs](https://www.javadoc.io/badge/com.unboundid/server-sdk-maven-parent.svg)](https://www.javadoc.io/doc/com.unboundid/server-sdk-maven-parent)
 # UnboundID Server SDK Maven Helpers
 
-This repository provides two components that can be used to develop and package 
-[UnboundID Server SDK](http://blog.arnaudlacour.com/2011/01/introducing-unboundid-server-sdk-future.html) 
-extensions using Maven. Among other benefits, Maven-based projects:
+The UnboundID Server SDK is a set of APIs for developing extensions to the
+PingData server products, including PingDirectory and PingDataGovernance.
 
-* Provide easy dependency management and access to a vast ecosystem of Java components.
-* Take advantage of integrations with IDEs like
-[IntelliJ IDEA](https://www.jetbrains.com/help/idea/2016.2/getting-started-with-maven.html#create_maven_project)
-and [Eclipse](https://books.sonatype.com/m2eclipse-book/reference/creating.html#creating-sect-m2e-create-archetype).
-* Work seamlessly with continuous integration systems, such as
-[Jenkins](https://wiki.jenkins-ci.org/display/JENKINS/Building+a+maven2+project),
-[Travis](https://docs.travis-ci.com/user/languages/java/),
-[CircleCI](https://circleci.com/docs/language-java/), and
-[Bamboo](https://confluence.atlassian.com/bamboo/maven-289277038.html).
-
-This project is provided as a convenient but unsupported
-alternative to the Server SDK's official Ant-based build mechanisms.
+This repository provides components that can be used to develop and package 
+[UnboundID Server SDK](https://docs.ping.directory/server-sdk/latest/) 
+extensions as Maven projects. The project is provided as a convenient but 
+unsupported alternative to the Server SDK's official Ant-based build mechanisms.
 
 The included components are:
 
@@ -32,6 +23,8 @@ generates will use the docs plugin automatically.
 
 [![asciicast](https://asciinema.org/a/105217.png)](https://asciinema.org/a/105217)
 
+### 1. Generate a project using the archetype
+
 Use the archetype to generate a Maven project, providing your own values for 
 `groupId` and `artifactId`:
 
@@ -42,6 +35,8 @@ mvn archetype:generate -DarchetypeGroupId=com.unboundid \
   -DgroupId=com.example -DartifactId=my-extension \
   -DinteractiveMode=false
 ```
+
+### 2. Implement the Server SDK extension
 
 The new project will contain an example extension class in `src/main/java`. 
 At a minimum, you will need to customize or replace this class, as well 
@@ -81,8 +76,24 @@ copied over.
                 └── index.html.vm
 ```
 
+### 3. Build the extension bundle
+
 When you are ready to build an extension bundle, run `mvn package`. 
 The extension bundle will be created as a zip in the `target` directory.
+
+### 4. Install the extension bundle
+
+Install the extension bundle using the 
+[manage-extension](https://docs.ping.directory/PingDirectory/latest/cli/manage-extension.html) 
+tool.
+
+```bash
+$ bin/manage-extension --install com.example.my-extension-1.0-SNAPSHOT.zip
+```
+
+After installing the extension bundle, you'll need to configure the PingData 
+server to use it. The necessary configuration varies depending on the specifics 
+of your extension.
 
 ## Developer notes
 

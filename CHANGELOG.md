@@ -1,9 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## 1.0.15 - unreleased
+## 1.0.16 - unreleased
+
+## 1.0.15 - 2020/12/07
 ### Changed
-- General: Updated source code copyrights
+- General: Updated source code copyrights.
+- General: Updated README with details about using the archetype.  
+- Archetype: Updated default Java version to Java 8.
+- Archetype: Updated default Server SDK version to 8.1.0.0.
+- Archetype: Fixed problem with extension bundle manifest when using -EA versions. (Issue #25)
+- Docs Maven Plugin: Updated Maven Plugin Plugin version to 3.6.0.
 
 ## [1.0.14] - 2017/07/06
 ### Changed

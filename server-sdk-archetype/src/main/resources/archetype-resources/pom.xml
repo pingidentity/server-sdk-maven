@@ -33,7 +33,8 @@
     <!--
     The Server SDK version for which this extension will be built.
 
-    EXAMPLE:  <server-sdk.version>6.0.0.0</server-sdk.version>
+    EXAMPLE:  <server-sdk.version>8.1.0.0</server-sdk.version>
+    EXAMPLE:  <server-sdk.version>8.2.0.0-EA</server-sdk.version>
     -->
     <server-sdk.version>8.1.0.0</server-sdk.version>
 
@@ -42,7 +43,7 @@
     In general, you should only need to change this if you are building with
     a snapshot build of the Server SDK.
 
-    EXAMPLE:  <server-sdk.maven-version>6.0.0.0-SNAPSHOT</server-sdk.maven-version>
+    EXAMPLE:  <server-sdk.maven-version>8.1.0.0-SNAPSHOT</server-sdk.maven-version>
     -->
     <server-sdk.maven-version>${server-sdk.version}</server-sdk.maven-version>
 
@@ -212,6 +213,32 @@
         </executions>
       </plugin>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <!--
+            The manage-extension tool will reject an extension bundle if the
+            bundle's manifest includes an UnboundID-Server-SDK-Version value
+            with a qualifier, such as "8.2.0.0-EA". This strips the qualifier,
+            producing an UnboundID-Server-SDK-Version value like "8.2.0.0".
+            -->
+            <id>set-server-sdk-jar-version</id>
+            <goals>
+              <goal>regex-property</goal>
+            </goals>
+            <configuration>
+              <name>server-sdk.jar-version</name>
+              <value>${server-sdk.version}</value>
+              <regex>-EA$</regex>
+              <replacement/>
+              <failIfNoMatch>false</failIfNoMatch>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.6</version>
@@ -224,9 +251,11 @@
               <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
             </manifest>
             <manifestEntries>
+              <!-- These properties must be present in the extension bundle's
+              manifest. -->
               <Build-Time>${maven.build.timestamp}</Build-Time>
               <Extension-Support-Contact>${extension.vendor.contact}</Extension-Support-Contact>
-              <UnboundID-Server-SDK-Version>${server-sdk.version}</UnboundID-Server-SDK-Version>
+              <UnboundID-Server-SDK-Version>${server-sdk.jar-version}</UnboundID-Server-SDK-Version>
             </manifestEntries>
           </archive>
           <excludes>

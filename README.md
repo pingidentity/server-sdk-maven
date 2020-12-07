@@ -21,7 +21,10 @@ generates will use the docs plugin automatically.
 
 ## Usage
 
-[![asciicast](https://asciinema.org/a/105217.png)](https://asciinema.org/a/105217)
+1. Generate a project using the archetype
+2. Implement the Server SDK extension(s)
+3. Build the extension bundle
+4. Install the extension bundle
 
 ### 1. Generate a project using the archetype
 
@@ -36,11 +39,21 @@ mvn archetype:generate -DarchetypeGroupId=com.unboundid \
   -DinteractiveMode=false
 ```
 
-### 2. Implement the Server SDK extension
+### 2. Implement the Server SDK extension(s)
 
 The new project will contain an example extension class in `src/main/java`. 
-At a minimum, you will need to customize or replace this class, as well 
-as the generated `pom.xml`.
+To implement your Server SDK extension, modify or replace this class, and add 
+any others that you need. A single project may include multiple Server SDK 
+extensions, which will be packaged as a single extension bundle.
+
+You will also need to customize the generated `pom.xml`:
+
+* Provide project metadata in the following fields:
+  * `name`
+  * `description`
+  * `organization`
+* Set the target PingData version by changing `server-sdk.version`. 
+  Examples of valid values are `8.1.0.0` and `8.2.0.0-EA`.
 
 If you'd like other assets to appear in the extension bundle, place 
 them in a subdirectory of `src/main/assembly` and configure `assembly.xml` 

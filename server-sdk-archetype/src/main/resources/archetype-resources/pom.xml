@@ -19,7 +19,7 @@
   <properties>
     <!--
     The following properties will be used during the course of building one or
-    more extensions for UnboundID server products. If multiple extensions will
+    more extensions for PingData server products. If multiple extensions will
     be packaged into the same jar file, then these property values should refer
     to the collection rather than individual extensions.
     -->
@@ -35,10 +35,12 @@
 
     EXAMPLE:  <server-sdk.version>6.0.0.0</server-sdk.version>
     -->
-    <server-sdk.version>6.0.1.0</server-sdk.version>
+    <server-sdk.version>8.1.0.0</server-sdk.version>
 
     <!--
     The Maven version string of the Server SDK dependency to build against.
+    In general, you should only need to change this if you are building with
+    a snapshot build of the Server SDK.
 
     EXAMPLE:  <server-sdk.maven-version>6.0.0.0-SNAPSHOT</server-sdk.maven-version>
     -->

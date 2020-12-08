@@ -10,7 +10,7 @@
   <name>UnboundID Server SDK Maven Parent</name>
   <description>Components allowing developers to create and package UnboundID Server SDK extensions using Maven.</description>
   <url>https://github.com/pingidentity/server-sdk-maven</url>
-  <version>1.0.16-SNAPSHOT</version>
+  <version>1.0.15-SNAPSHOT</version>
 
   <licenses>
     <license>

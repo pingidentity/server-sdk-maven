@@ -33,10 +33,10 @@
     <!--
     The Server SDK version for which this extension will be built.
 
-    EXAMPLE:  <server-sdk.version>8.1.0.0</server-sdk.version>
-    EXAMPLE:  <server-sdk.version>8.2.0.0-EA</server-sdk.version>
+    EXAMPLE:  <server-sdk.version>8.2.0.0</server-sdk.version>
+    EXAMPLE:  <server-sdk.version>8.3.0.0-EA</server-sdk.version>
     -->
-    <server-sdk.version>8.1.0.0</server-sdk.version>
+    <server-sdk.version>8.2.0.0</server-sdk.version>
 
     <!--
     The Maven version string of the Server SDK dependency to build against.

@@ -42,7 +42,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <server-sdk.version>8.1.0.0</server-sdk.version>
+    <server-sdk.version>8.2.0.0</server-sdk.version>
   </properties>
 
   <profiles>

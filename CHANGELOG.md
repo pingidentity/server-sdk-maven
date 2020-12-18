@@ -2,6 +2,7 @@
 All notable changes to this project will be documented in this file.
 
 ## 1.0.16 - unreleased
+- Archetype: Updated default Server SDK version to 8.2.0.0. 
 
 ## 1.0.15 - 2020/12/07
 ### Changed

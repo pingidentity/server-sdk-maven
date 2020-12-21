@@ -1,11 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## 1.0.16 - unreleased
+## [1.0.16] - 2020/12/21
+### Changed
 - Archetype: Updated default Server SDK version to 8.2.0.0.
 - Archetype: Move frequently used POM properties to the top.
 
-## 1.0.15 - 2020/12/07
+## [1.0.15] - 2020/12/07
 ### Changed
 - General: Updated source code copyrights.
 - General: Updated README with details about using the archetype.  

@@ -34,7 +34,7 @@ Use the archetype to generate a Maven project, providing your own values for
 ```
 mvn archetype:generate -DarchetypeGroupId=com.unboundid \
   -DarchetypeArtifactId=server-sdk-archetype \
-  -DarchetypeVersion=1.0.15 \
+  -DarchetypeVersion=1.0.16 \
   -DgroupId=com.example -DartifactId=my-extension \
   -DinteractiveMode=false
 ```

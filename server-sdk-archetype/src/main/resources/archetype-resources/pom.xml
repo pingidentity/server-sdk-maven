@@ -38,6 +38,7 @@
     usually corresponds to the product version of your PingData server.
 
     EXAMPLE:  <server-sdk.version>8.2.0.0</server-sdk.version>
+    EXAMPLE:  <server-sdk.version>8.3.0.0-SNAPSHOT</server-sdk.version>
     EXAMPLE:  <server-sdk.version>8.3.0.0-EA</server-sdk.version>
     -->
     <server-sdk.version>8.2.0.0</server-sdk.version>
@@ -55,15 +56,6 @@
     -->
     <source.version>1.8</source.version>
     <target.version>1.8</target.version>
-
-    <!--
-    The Maven version string of the Server SDK dependency to build against.
-    In general, you should only need to change this if you are building with
-    a snapshot build of the Server SDK.
-
-    EXAMPLE:  <server-sdk.maven-version>8.1.0.0-SNAPSHOT</server-sdk.maven-version>
-    -->
-    <server-sdk.maven-version>${server-sdk.version}</server-sdk.maven-version>
 
     <!--
     The name for this extension or set of extensions. It must begin with an
@@ -222,8 +214,9 @@
             <!--
             The manage-extension tool will reject an extension bundle if the
             bundle's manifest includes an UnboundID-Server-SDK-Version value
-            with a qualifier, such as "8.2.0.0-EA". This strips the qualifier,
-            producing an UnboundID-Server-SDK-Version value like "8.2.0.0".
+            with a qualifier, such as "8.2.0.0-EA" or "8.2.0.0-SNAPSHOT". 
+            This strips the qualifier, producing an UnboundID-Server-SDK-Version
+            value like "8.2.0.0".
             -->
             <id>set-server-sdk-jar-version</id>
             <goals>
@@ -232,7 +225,7 @@
             <configuration>
               <name>server-sdk.jar-version</name>
               <value>${server-sdk.version}</value>
-              <regex>-EA$</regex>
+              <regex>-(EA|SNAPSHOT)$</regex>
               <replacement/>
               <failIfNoMatch>false</failIfNoMatch>
             </configuration>
@@ -286,7 +279,7 @@
           <dependency>
             <groupId>com.unboundid</groupId>
             <artifactId>server-sdk</artifactId>
-            <version>${server-sdk.maven-version}</version>
+            <version>${server-sdk.version}</version>
           </dependency>
         </dependencies>
         <executions>
@@ -325,7 +318,7 @@
     <dependency>
       <groupId>com.unboundid</groupId>
       <artifactId>server-sdk</artifactId>
-      <version>${server-sdk.maven-version}</version>
+      <version>${server-sdk.version}</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.0.17] - unreleased
+### Fixed
+- Archetype: Fixed problems executing the Maven Javadoc Plugin with Java 11. (Issues #34 and #35)
+
 ## [1.0.16] - 2020/12/21
 ### Changed
 - Archetype: Updated default Server SDK version to 8.2.0.0.
@@ -19,9 +23,10 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - General: Updated source code copyrights and hyperlinks; renamed `unboundid.css` to `ping.css`.
 - Archetype: Updated Maven Assembly Plugin version to 3.0.0.
-- Archetype: Fixed a Maven Assembly Plugin warning that was caused by using both zip and dir output format. The solution is to use zip only, but this can be manually undone, if desired.
 - Archetype: Set compiler flag -Xpkginfo:always in the generated POM. This prevents the Server SDK Docs Maven Plugin from emitting a harmless warning about a ClassNotFoundException when it encounters a package-info.java file during builds.
 - Docs Maven Plugin: Use the logging facility for Maven plugins instead of printing directly to standard output.
+### Fixed
+- Archetype: Fixed a Maven Assembly Plugin warning that was caused by using both zip and dir output format. The solution is to use zip only, but this can be manually undone, if desired.
 
 ## [1.0.13] - 2017/04/10
 ### Changed
